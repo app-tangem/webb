@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Sky Background</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"/>
+    <link rel="stylesheet" href="style.css">
+     
+    <style>
+        @layer utilities {
+            .star {
+                position: absolute;
+                border-radius: 50%;
+                animation: twinkle var(--duration) infinite ease-in-out;
+            }
+            
+            @keyframes twinkle {
+                0%, 100% { opacity: 0.2; }
+                50% { opacity: 0.8; }
+            }
+            
+            .shooting-star {
+                position: absolute;
+                width: 3px;
+                height: 3px;
+                background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(100,149,237,0.8) 50%, rgba(255,255,255,0) 100%);
+                animation: shoot var(--shoot-duration) linear infinite;
+                opacity: 0;
+            }
+            
+            @keyframes shoot {
+                0% { 
+                    transform: translateX(0) translateY(0);
+                    opacity: 0.8;
+                }
+                70% { opacity: 0.8; }
+                100% { 
+                    transform: translateX(1000px) translateY(300px);
+                    opacity: 0;
+                }
+            }
+            
+            .light-blob {
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                background: radial-gradient(circle, rgba(100,149,237,0.15) 0%, rgba(100,149,237,0) 70%);
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                filter: blur(20px);
+                animation: pulse 8s infinite alternate;
+            }
+            
+            @keyframes pulse {
+                0% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.9); }
+                100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#060C16] h-screen w-full overflow-hidden relative">
+  <header class="bg-[#060C16] fixed top-0 left-0 z-50 w-full">
+        <nav class=" px-6 flex items-center justify-between h-15">
+            <img src="img/TangemMainLogo-.png" alt="Tangem Logo" class="w-28">
+
+            <div id="navMenu" class="md:right-0 md:static md:border-0 md:min-h-0 md:bg-transparent md:w-auto  bg-[#040609] absolute top-0 right-[-100%] min-h-[100vh] w-full border-b border-gray-500 px-5 ease-out overflow-hidden duration-500 z-20 md:overflow-visible">
+                <ul class="flex flex-col items-start md:gap-0 gap-8 pt-20 md:pt-0 md:flex-row md:pl-10">
+                    <li class="relative text-xl md:text-lg pt-3 md:w-auto ml-4 ">
+                        <a href="" class="text-white transition">Wallet</a>
+                        <span class="w-80 absolute bottom-0 left-0 h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                    </li>
+
+                    <li class="relative text-xl md:text-lg pt-3 md:ml-8 ml-4">
+                         <a href="" class="transition text-gray-400 hover:text-white crelative inline-block pb-1">
+                            Ring
+                            <span class="w-80 absolute bottom-0 left-0  h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                         </a>
+                    </li>
+
+                    <li class="md:pl-4 w-full text-xl md:text-lg">
+                        <button class="group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                            <span class="flex items-center">
+                            Partnership
+                            <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                            </span>
+                            <span class="w-80 absolute bottom-0 left-4 right-0 h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                            <div class="w-40 z-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                            <ul class="space-y-4">
+                            <li class="text-start hover:bg-[#222425] "><a  href="" >Resellers</a></li>
+                            <li class="text-start text-nowrap hover:bg-[#222425] "><a href="">Referral program</a></li>
+                            <li class="text-start hover:bg-[#222425] "><a href="">Co-branding</a></li>
+                            </ul>
+                            </div>
+                        </button>
+                    </li>
+
+                    <li class=" text-xl md:text-lg">
+                        <button class="group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                            <span class="flex items-center">
+                            Community
+                            <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                            </span>
+                             <span class="w-80 absolute bottom-0 left-4 right-0 h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                            <div class="w-40 z-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                            <ul class="space-y-4">
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-twitter-x-line text-lg"></i></span>X
+                                </a>
+                                <i class="ri-arrow-drop-right-line"></i>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-telegram-line text-lg"></i></span>Telegram
+                                </a>
+                                <i class="ri-arrow-drop-right-line"></i>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-discord-line text-lg"></i></span>Discord
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-reddit-line text-lg"></i></span>Redit
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-instagram-line text-lg"></i></span>Instagram
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-facebook-circle-fill text-lg"></i></span>Facebook
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-linkedin-fill text-lg"></i></span>LinkedIn
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-youtube-fill text-lg"></i></span>Youtube
+                                </a>
+                            </li>
+                            </ul>
+                            </div>
+                        </button>
+                    </li>
+
+                    <li class="text-xl md:text-lg">
+                        <button class="group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                            <span class="flex items-center">
+                                More
+                                <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                            </span>
+                             <span class="w-80 absolute bottom-0 left-4 right-0 h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                            <div class="w-40 z-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                                <ul class="space-y-4">
+                                    <li class="text-start hover:bg-[#222425] "><a  href="" >Company</a></li>
+                                    <li class="text-start text-nowrap hover:bg-[#222425] "><a href="">Blog</a></li>
+                                    <li class="text-start hover:bg-[#222425] "><a href="">Grossary</a></li>
+                                    <li class="text-start hover:bg-[#222425] "><a href="">Help Center</a></li>
+                                </ul>
+                            </div>
+                        </button>
+                    </li>
+                    <li class="md:hidden">
+                        <button class="group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                            <span class="flex items-center">
+                            <i class="ri-global-line text-2xl font-light"></i>
+                            English
+                            <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                            </span>
+                            <div class="w-40 z-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                                <ul class="space-y-4">
+                                    <li class="block hover:bg-[#222425] py-2 px-4"><a  href="" >English</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">Deutsch</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">Français</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">Español</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">Türkçe</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">日本語</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">中文</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">한국어</a></li>
+                                </ul>
+                            </div>
+                        </button>
+                    </li>
+                    <li class="md:hidden">
+                        <button class="bg-gradient-to-r from-[#1796E6] to-[#008AE6] text-lg text-white px-6 font-semibold py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">Get Tangem</button>
+                    </li>
+                </ul>
+                <div class="md:hidden text-xl cursor-pointer absolute top-5 right-5">
+                    <i class="ri-xrp-line text-2xl text-white" id="closeIcon"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-1">
+                 <button class="text-xl md:text-lg hidden lg:block group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                    <span class="flex items-center">
+                    <i class="ri-global-line text-2xl font-light"></i>
+                    English
+                    <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                    </span>
+                    <div class="w-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                        <ul class="space-y-4">
+                            <li class="block hover:bg-[#222425] py-2 px-4"><a  href="" >English</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">Deutsch</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">Français</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">Español</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">Türkçe</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">日本語</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">中文</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">한국어</a></li>
+                        </ul>
+                    </div>
+                </button>
+
+                <button class="bg-gradient-to-r from-[#1796E6] to-[#008AE6] text-white px-4 font-semibold py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">Get Tangem</button>
+                <div class="md:hidden text-xl cursor-pointer" id="hamburger">
+                 <i class="ri-menu-line text-2xl text-white"></i>
+                </div>
+            </div>
+        </nav>
+  </header>
+    <!-- Night Sky Container -->
+    <div class="absolute inset-0 overflow-hidden">
+        <!-- Lighting blob in center -->
+        <div class="light-blob"></div>
+    </div>
+    
+    <!-- Your content goes here (example) -->
+    <div class="relative z-10 flex items-center justify-center h-full">
+        <div class="text-white text-center p-8 bg-black bg-opacity-30 rounded-lg backdrop-blur-sm">
+            <h1 class="text-4xl font-bold mb-4">Welcome to My Website</h1>
+            <p class="text-xl">Enjoy the cosmic night sky</p>
+        </div>
+    </div>
+
+
+
+ <script src="smaple.js"></script>  
+</body>
+</html>
+
+
+
+ <section class="h-screen w-full pt-16 px-8">
+    <div class="absolute inset-0 overflow-hidden">
+        <!-- Lighting blob in center -->
+        <div class="light-blob"></div>
+    </div>
+    <div class="z-50 flex justify-center pt-10">
+        <img src="img/jointImage.png" alt="" class="min-w-xs z-50 transform drop-shadow-[0_0_30px_rgba(104,112,255,0.3)] transition-all duration-300 hover:scale-105">
+    </div>
+   </section>
+
+
+
+
+   
+       
+
+
+
+
+
+<ul class="swiper-wrapper">
+
+                <li class="swiper-slide">
+                    <div class>
+                        <div style="position:relative; width:100%; height:0px; padding-bottom:70.588%"><iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/m4am6l?autoplay=1&muted=1&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <div class="w-full">
+                        <div href="www.youtube.com" style="position:relative; width:100%; height:0px; padding-bottom:56.250%">
+                            <iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/f04vg3?autoplay=1&muted=1&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="swiper-slide">
+                    <a href="">
+                    <div class="w-full">
+                        <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%">
+                            <iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/qk9p5d?autoplay=1&muted=1&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
+                        </div>
+                    </div>
+                    </a>
+                </li>
+
+                <li class="swiper-slide">
+                    <a href="">
+                    <div class="w-full">
+                        <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%">
+                            <iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/iygrdp?autoplay=1&muted=1&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
+                        </div>
+                    </div>
+                    </a>
+                </li>
+
+                <li class="swiper-slide">
+                    <a href="" class="cursor-pointer">
+                    <div class="w-full">
+                        <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%">
+                            <iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/gehoot?autoplay=1&muted=1&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
+                        </div>
+                    </div>
+                    </a>
+                </li>
+</ul> 
+
+
+
+ <div class="swiper mt-10 mb-20 py-10 flex flex-col gap-4">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <div class="flex flex-col text-white p-10 rounded-lg bg-gray-600">
+                        <p class="paragraph">Tangem</p>
+                        <div>
+                            <img src="img/Tangem WalletSlide.png" alt="">
+                            <div>
+                                <p>KRC-20 tokens </p>
+                                <p><span>Now in</span>Tangem!</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+            
+        </div>

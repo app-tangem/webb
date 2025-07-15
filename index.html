@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="Tangem Wallet - Secure Crypto Hardware Wallet">
+    <meta property="og:description" content="Store, buy, and swap crypto securely with Tangem's EAL6+ certified hardware wallet. No batteries, no cables, just tap and go.">
+    <meta property="og:image" content="https://yourwebsite.com/img/tangem-preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card (for Twitter/X) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tangem Wallet - Secure Crypto Hardware Wallet">
+    <meta name="twitter:description" content="The most secure way to manage crypto assets. Swiss-made, hacker-proof design.">
+    <meta name="twitter:image" content="https://yourwebsite.com/img/tangem-twitter-preview.jpg">
+
+    <!-- Fallback for non-OG platforms (e.g., some messaging apps) -->
+    <meta name="description" content="Tangem Wallet: Bank-grade security for Bitcoin, Ethereum, and 1000+ cryptos. Buy now.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="shortcut icon" href="img/tangemlogopng.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title class="font-bold">Tangem - Your Secured Crypto & Hardware Wallet</title>
+     <style>
+        @layer utilities {
+            .star {
+                position: absolute;
+                border-radius: 50%;
+                animation: twinkle var(--duration) infinite ease-in-out;
+            }
+            
+            @keyframes twinkle {
+                0%, 100% { opacity: 0.2; }
+                50% { opacity: 0.8; }
+            }
+            
+            .shooting-star {
+                position: absolute;
+                width: 3px;
+                height: 3px;
+                background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(100,149,237,0.8) 50%, rgba(255,255,255,0) 100%);
+                animation: shoot var(--shoot-duration) linear infinite;
+                opacity: 0;
+            }
+            
+            @keyframes shoot {
+                0% { 
+                    transform: translateX(0) translateY(0);
+                    opacity: 0.8;
+                }
+                70% { opacity: 0.8; }
+                100% { 
+                    transform: translateX(1000px) translateY(300px);
+                    opacity: 0;
+                }
+            }
+            
+            .light-blob {
+                position: absolute;
+                width: 1000px;
+                height: 500px;
+                background: radial-gradient(circle, rgba(252, 252, 252, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                filter: blur(20px);
+                animation: pulse 8s infinite alternate;
+            }
+            
+            @keyframes pulse {
+                0% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.9); }
+                100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+            }
+        }
+
+        .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+        }
+        body {
+            top: 0 !important;
+        }
+        .goog-te-menu-frame {
+            z-index: 999999 !important;
+            position: fixed !important;
+        }
+        .goog-te-combo {
+            background: #333;
+            color: white;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #444;
+        }
+        .goog-te-gadget {
+            color: transparent !important;
+        }
+        .goog-te-gadget .goog-te-combo {
+            margin: 4px 0;
+        }
+        #google_translate_element {
+            position: fixed;
+            top: 60px;
+            right: 80px;
+            z-index: 9999;
+        }
+        @media screen and (max-width: 768px) {
+            #google_translate_element {
+                top: 30px;
+                right: 15px;
+            }
+            .goog-te-combo {
+                padding: 4px;
+                font-size: 14px;
+            }
+        }
+
+    /* Add these styles to your existing CSS */
+        .swiper-slide {
+            height: auto; /* Make all slides same height */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(145deg, #1a1c1d, #121415);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .swiper-slide:hover .card {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(23, 150, 230, 0.3);
+            border-color: rgba(23, 150, 230, 0.3);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-content {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #6C6C70, #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .card-text {
+            color: #a0a0a0;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-button {
+            align-self: center;
+            background: linear-gradient(to right, #1796E6, #008AE6);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(23, 150, 230, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-[#060C16]">
+  <header class="bg-[#060C16] fixed top-0 left-0 z-80 w-full">
+    <div id="google_translate_element">
+    <i class="ri-translate-2" style="color: white; margin-right: 5px;"></i>
+    </div>
+        <nav class=" px-6 flex items-center justify-between h-15">
+            <img src="img/TangemMainLogo-.png" alt="Tangem Logo" class="w-28">
+
+            <div id="navMenu" class="md:right-0 md:static md:border-0 md:min-h-0 md:bg-transparent md:w-auto  bg-[#040609] absolute top-0 right-[-100%] min-h-[100vh] w-full border-b border-gray-500 px-5 ease-out overflow-hidden duration-500 z-50 md:overflow-visible">
+                <ul class="flex flex-col items-start md:gap-0 gap-8 pt-20 md:pt-0 md:flex-row md:pl-10">
+                    <li class="relative text-xl md:text-lg pt-3 md:w-auto ml-4 ">
+                        <a href="" class="text-white transition">Wallet</a>
+                        <span class="w-80 absolute bottom-0 left-0 h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                    </li>
+
+                    <li class="relative text-xl md:text-lg pt-3 md:ml-8 ml-4">
+                         <a href="" class="transition text-gray-400 hover:text-white crelative inline-block pb-1">
+                            Ring
+                            <span class="w-80 absolute bottom-0 left-0  h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                         </a>
+                    </li>
+
+                    <li class="md:pl-4 w-full text-xl md:text-lg">
+                        <button class="group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                            <span class="flex items-center">
+                            Partnership
+                            <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                            </span>
+                            <span class="w-80 absolute bottom-0 left-4 right-0 h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                            <div class="w-40 z-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                            <ul class="space-y-4">
+                            <li class="text-start hover:bg-[#222425] "><a  href="" >Resellers</a></li>
+                            <li class="text-start text-nowrap hover:bg-[#222425] "><a href="">Referral program</a></li>
+                            <li class="text-start hover:bg-[#222425] "><a href="">Co-branding</a></li>
+                            </ul>
+                            </div>
+                        </button>
+                    </li>
+
+                    <li class=" text-xl md:text-lg">
+                        <button class="group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                            <span class="flex items-center">
+                            Community
+                            <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                            </span>
+                             <span class="w-80 absolute bottom-0 left-4 right-0 h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                            <div class="w-40 z-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                            <ul class="space-y-4">
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-twitter-x-line text-lg"></i></span>X
+                                </a>
+                                <i class="ri-arrow-drop-right-line"></i>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-telegram-line text-lg"></i></span>Telegram
+                                </a>
+                                <i class="ri-arrow-drop-right-line"></i>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-discord-line text-lg"></i></span>Discord
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-reddit-line text-lg"></i></span>Redit
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-instagram-line text-lg"></i></span>Instagram
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-facebook-circle-fill text-lg"></i></span>Facebook
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-linkedin-fill text-lg"></i></span>LinkedIn
+                                </a>
+                            </li>
+                            <li class="text-start hover:bg-[#222425] flex justify-between">
+                                <a  href=""class="flex items-center gap-2 text-gray-200">
+                                    <span class=" text-gray-400"><i class="ri-youtube-fill text-lg"></i></span>Youtube
+                                </a>
+                            </li>
+                            </ul>
+                            </div>
+                        </button>
+                    </li>
+
+                    <li class="text-xl md:text-lg">
+                        <button class="group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                            <span class="flex items-center">
+                                More
+                                <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                            </span>
+                             <span class="w-80 absolute bottom-0 left-4 right-0 h-px bg-gradient-to-r from-gray-400 via-gray-600 to-transparent md:hidden"></span>
+                            <div class="w-40 z-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                                <ul class="space-y-4">
+                                    <li class="text-start hover:bg-[#222425] "><a  href="" >Company</a></li>
+                                    <li class="text-start text-nowrap hover:bg-[#222425] "><a href="">Blog</a></li>
+                                    <li class="text-start hover:bg-[#222425] "><a href="">Grossary</a></li>
+                                    <li class="text-start hover:bg-[#222425] "><a href="">Help Center</a></li>
+                                </ul>
+                            </div>
+                        </button>
+                    </li>
+                    <li class="md:hidden">
+                        <button class="group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                            <span class="flex items-center">
+                            <i class="ri-global-line text-2xl font-light"></i>
+                            English
+                            <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                            </span>
+                            <div class="w-40 z-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                                <ul class="space-y-4">
+                                    <li class="block hover:bg-[#222425] py-2 px-4"><a  href="" >English</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">Deutsch</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">Français</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">Español</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">Türkçe</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">日本語</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">中文</a></li>
+                                    <li class="hover:bg-[#222425] py-1"><a href="">한국어</a></li>
+                                </ul>
+                            </div>
+                        </button>
+                    </li>
+                    <li class="md:hidden">
+                        <button onclick="redirect()" class="cursor-pointer bg-gradient-to-r from-[#1796E6] to-[#008AE6] text-lg text-white px-6 font-semibold py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">Get Tangem</button>
+                    </li>
+                </ul>
+                <div class="md:hidden text-xl cursor-pointer absolute top-5 right-5">
+                    <i class="ri-xrp-line text-2xl text-white" id="closeIcon"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-1">
+                 <button class="text-xl md:text-lg hidden lg:block group relative px-4 py-2 rounded-xl text-gray-400 hover:text-white">
+                    <span class="flex items-center">
+                    <i class="ri-global-line text-2xl font-light"></i>
+                    English
+                    <i class="ri-arrow-drop-down-line text-4xl transition-transform duration-200 group-hover:rotate-180"></i>
+                    </span>
+                    <div class="w-40 bg-[#1a1c1d] scale-y-0 group-hover:scale-y-100 origin-top duration-200 absolute top-14 rounded-md right-0 left-0 p-3 mt-1 shadow-md">
+                        <ul class="space-y-4">
+                            <li class="block hover:bg-[#222425] py-2 px-4"><a  href="" >English</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">Deutsch</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">Français</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">Español</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">Türkçe</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">日本語</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">中文</a></li>
+                            <li class="hover:bg-[#222425] py-1"><a href="">한국어</a></li>
+                        </ul>
+                    </div>
+                </button>
+
+                <button onclick="redirect()" class=" cursor-pointer bg-gradient-to-r from-[#1796E6] to-[#008AE6] text-white px-4 font-semibold py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">Get Tangem</button>
+                <div class="md:hidden text-xl cursor-pointer" id="hamburger">
+                 <i class="ri-menu-line text-2xl text-white"></i>
+                </div>
+            </div>
+        </nav>
+  </header>
+  
+
+   <section class="w-full pt-6 relative pb-20 bg-[#020204]" style="padding-top: 80px;">
+    <div class="absolute inset-0 overflow-hidden">
+        <!-- Lighting blob in center -->
+        <div class="light-blob"></div>
+    </div>
+    <div class="z-50 flex flex-col items-center justify-center px-2">
+        <img src="img/MainBackCard-removebg-preview.png" alt="" class="w-72 md:w-80 lg:w-96 z-20 mt-6 absolute opacity-80 drop-shadow-2xl">
+        <img src="img/HeroSectionOriginal.png" alt="" class="w-60 md:w-64 lg:w-72 z-30 relative lg:top-64 top-48 opacity-80 drop-shadow-2xl">
+    </div>
+    <div class="bg-gradient-to-b from-transparent to-[#010101] w-full top-3/4 absolute z-60">
+       <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold xl:text-8xl mx-auto text-center xl:w-3/4 lg:w-2/4 mb-10 px-8 text-gray-200 "><span class="bg-gradient-to-b from-gray-600 to-gray-200 font-bold text-transparent bg-clip-text ">Tangem</span> — Your Secure Crypto & Hardware Wallet</h1>
+       <h3 class="text-gray-500 font-semibold text-center lg:w-2/4 lg:text-2xl text-wrap mb-2 mx-auto px-6">Slim as a bank card, secure as a bank vault. Store, buy, earn, transfer and swap thousands of coins and tokens.</h3>
+       <div class="flex flex-col lg:flex-row items-start justify-center pt-10 gap-4 pb-20 px-8">
+            <div class="flex gap-10 justify-center items-center">
+                <p class="text-gray-600 text-start text-wrap font-semibold text-lg md:hidden">Safe</p>
+                <p class="text-gray-600 text-start text-wrap font-semibold text-lg hidden md:block">Safe</p>
+                <button onclick="redirect()" class="bg-gradient-to-r from-[#1796E6] bg-clip-text to-[#81c6f5] px-6 py-3 rounded-md text-transparent text-lg cursor-pointer font-semibold">
+                    Get Started
+                    <span><i class="ri-arrow-right-s-line"></i></span>
+                </button>
+            </div>
+
+            <div class="flex gap-4 justify-center items-center">
+            <p class="text-gray-600 text-start font-semibold text-lg md:hidden">Trusted</p>
+            <p class="text-gray-600 text-start font-semibold text-lg hidden md:block">Trusted</p>
+            <button onclick="redirect()" class="bg-gradient-to-r  from-[#1796E6] bg-clip-text to-[#81c6f5] px-6 py-3 rounded-md text-transparent text-lg cursor-pointer font-semibold">
+                Migrate
+                <span class=""><i class="ri-arrow-right-s-line"></i></span>
+            </button>
+            </div>
+
+            <div class="flex gap-4 justify-center items-center">
+            <p class="text-gray-600 text-start text-wrap font-semibold text-lg md:hidden">Secured</p>
+            <p class="text-gray-600 text-start text-wrap font-semibold text-lg hidden md:block">Secured</p>
+            <button onclick="redirect()" class="bg-gradient-to-r from-[#1796E6] bg-clip-text to-[#81c6f5] px-6 py-3 rounded-md text-transparent text-lg cursor-pointer font-semibold">
+                Validate
+                <span><i class="ri-arrow-right-s-line"></i></span>
+            </button>
+            </div>
+
+            <div class="flex gap-4 justify-center items-center">
+            <p class="text-gray-600 text-start text-wrap font-semibold text-lg md:hidden">Protected</p>
+            <p class="text-gray-600 text-start text-wrap font-semibold text-lg hidden md:block">Protected</p>
+            <button onclick="redirect()" class="text-nowrap bg-gradient-to-r from-[#1796E6] bg-clip-text to-[#81c6f5] px-6 py-3 rounded-md text-transparent text-lg cursor-pointer font-semibold">
+                Authenticate
+                <span><i class="ri-arrow-right-s-line"></i></span>
+            </button>
+            </div>
+       </div>
+
+       <div class="text-gray-600 px-6  flex items-center md:justify-center gap-4 pb-2 overflow-x-auto whitespace-nowrap">
+        <p class="flex-shrink-0 px-2 py-1 bg-[#222425] rounded-md pl-2 font-semibold text-lg"><span class="cursor-pointer bg-red-500 text-white font-bold p-0.5 rounded-lg text-center"><i class="ri-add-line"></i></span> Swiss-based</p>
+        <p class="flex-shrink-0 px-2 py-1 bg-[#222425] rounded-md pl-2 font-semibold text-lg">25-year warranty</p>
+        <p class="flex-shrink-0 px-2 py-1 bg-[#222425] rounded-md pl-2 font-semibold text-lg">EAL6+ security standard</p>
+        <p class="flex-shrink-0 px-2 py-1 bg-[#222425] rounded-md pl-2 font-semibold text-lg"><span><i class="ri-shield-flash-fill"></i></span>Audited by Kudelski Security & Riscure</p>
+       </div>
+    </div>
+   </section>
+
+   <section  id="scroll-color-section" class="px-8 pt-[450px] md:pt-80 lg:pt-96 pb-6 bg-[#020204]">
+    <div class="mt-80 lg:mt-56" id="">
+    
+        <div class="swiper py-10 mb-6">
+            <ul class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <li class="swiper-slide">
+                    <div class="card">
+                        <img src="img/maxresdefault.jpg" alt="TON Transfer" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">TON Transfer</h3>
+                            <p class="card-text">
+                                Transfer TON (The Open Network) from your Telegram Wallet to your Bitget Wallet. 
+                                A secured way to manage your crypto assets more efficiently.
+                            </p>
+                            <button onclick="redirect()" class="card-button">Transfer Now</button>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Slide 2 -->
+                <li class="swiper-slide">
+                    <div class="card">
+                        <img src="img/Tangem WalletSlide.png" alt="Tangem Wallet" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">KRC-20 Tokens</h3>
+                            <p class="card-text">
+                                Now supporting KRC-20 tokens in your Tangem Wallet. 
+                                Expand your crypto portfolio with the latest token standard.
+                            </p>
+                            <button onclick="redirect()" class="card-button">Click To Claim</button>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Slide 3 -->
+                <li class="swiper-slide">
+                    <div class="card">
+                        <img src="img/SMart Backup.png" alt="Smart Backup" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Smart Backup</h3>
+                            <p class="card-text">
+                                To ensure the security and availability of your important data, 
+                                we strongly recommend that all users regularly back up their assets.
+                            </p>
+                            <button onclick="redirect()" class="card-button">Secure Now</button>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Slide 4 -->
+                <li class="swiper-slide">
+                    <div class="card">
+                        <img src="img/download__1_-removebg-preview.png" alt="Telegram Support" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Telegram Support</h3>
+                            <p class="card-text">
+                                Do you have a question about Telegram products? 
+                                Our support team is ready to help you 24/7.
+                            </p>
+                            <button onclick="redirect()" class="card-button flex items-center gap-2">
+                                Message <i class="ri-telegram-2-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Slide 5 -->
+                <li class="swiper-slide">
+                    <div class="card">
+                        <img src="img/memeCoin.png" alt="PEPE Meme Coin" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">PEPE Meme Coin</h3>
+                            <p class="card-text">
+                                Claim your free PEPE meme tokens today! 
+                                Limited time offer for all Tangem Wallet users.
+                            </p>
+                            <button onclick="redirect()" class="card-button">Claim Now</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        <div class="swiper-pagination"></div>
+        </div>
+
+        <h1 id="color-change-text" class="pb-20 pt-16 transition-colors duration-500 text-[#6C6C70] text-4xl lg:text-6xl tracking-tighter text-start md:text-5xl font-semibold  lg:w-2/3 mx-auto">Tangem redefines the crypto wallet experience with top-level security, simplicity, 
+        and convenience. Enjoy total independence when managing your digital assets on the go. 
+        We break down barriers for newcomers and enhance self-custody for experts.
+        </h1>
+    </div>
+    
+   </section>
+
+   <section class="px-8 pb-6 bg-[#020204] pt-16">
+    <div class="">
+        <div class="w-full h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent mb-10 md:mb-0"></div>
+        <div class="flex flex-col ">
+            <div class="text-white flex md:flex-row justify-between gap-4">
+                <div class="md:w-1/2 md:flex items-center justify-center xl:px-20">
+                <p class="text-[#6C6C70] font-semibold md:text-2xl lg:px-20 text-lg"><span class="text-white">During activation,</span> the Tangem chip generates a random private key offline, ensuring it cannot be compromised.</p>
+                <h1 class="pt-6 text-[#6C6C70] font-semibold md:hidden">* <span class="text-white">Set</span> up a hardware wallet in 3 minutes</h1>
+                </div>
+                 <div class="h-64 lg:h-80 hidden md:flex w-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent"></div>
+                <div class="hidden md:flex md:w-1/2 items-center justify-center">
+                    <h1 class="pt-6 text-[#6C6C70] text-lg font-semibold text-center md:text-2xl">Set up a hardware wallet in <br> <span class="text-white text-5xl"> 3 minutes</span></h1>
+                </div>
+            </div>
+            <div class="w-full h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent mb-10 md:mt-0 mt-10 md:mb-0"></div>
+            <div class="mt-10 flex flex-col md:flex-row-reverse md:justify-between xl:px-20 lg:px-10">
+                <div class="lg:w-2/3 flex items-center md:justify-end"> 
+                    <img src="img/mobile.CN5fbGrK_W8wFk.png" alt="" class="md:hidden">
+                    <img src="img/desktop.HhB-KJCi_1PSA6S.webp" alt="" class="hidden md:flex max-w-xl">
+                </div>
+                <div class="md:w-1/3 md:flex md:justify-center items-center mt-6 lg:px-20">
+                    <h2 class="text-[#6C6C70] font-semibold text-lg lg:text-2xl text-start md:text-left"><span class="text-white">A Tangem Wallet set can contain up to three cards</span> or a ring 
+                        and two cards—each providing equal access like three identical keys.
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent mb-10 mt-10"></div>
+    </div>
+    
+   </section>
+   
+   <section class="px-8 pb-6 pt-16 bg-[#020204]">
+    <div class="xl:px-20 lg:px-10">
+            <h1 class="lg:px-10 xl:px-20 text-5xl font-semibold bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text">Smart private key backup.</h1>
+        <div class="mt-8 lg:mt-14">
+            <h2 class="xl:px-20 lg:px-10 text-[#6C6C70] mb-8 font-semibold md:text-lg md:w-2/5">Cutting-edge technology developed by Tangem engineers.</h2>
+            <div class="pt-10 grid lg:px-10  md:grid-cols-2 xl:gap-4 gap-10 lg:grid-cols-3 xl:px-20">
+                <div class="flex flex-row md:flex-col md:items-start items-center gap-6">  
+                    <h1 class="font-bold text-lg text-[#6C6C70] px-4 py-2 border border-gray-300 shadow-inner bg-[#232323] rounded-md text-center">01</h1>
+                    <p class="lg:text-start text-sm md:text-lg tracking-tighter text-gray-100 text-start font-semibold"><span class="text-[#6C6C70]">The chip</span> generates a random, non-extractable private key.</p>
+                </div>
+
+                <div class="flex flex-row md:flex-col md:items-start items-center gap-6 lg:px-10">  
+                    <h1 class="font-bold text-lg text-[#6C6C70] px-4 py-2 border border-gray-300 shadow-inner bg-[#232323] rounded-md text-center">02</h1>
+                    <p class="text-sm md:text-lg tracking-tighter text-gray-100 text-start font-semibold">Tangem devices establish a secure connection <span class="text-[#6C6C70]">to transfer your encrypted private key. </span> </p>
+                </div>
+
+                <div class="flex flex-row items-center md:items-start md:flex-col gap-6 lg:px-10 ">  
+                    <h1 class="font-bold text-lg text-[#6C6C70] px-4 py-2 border border-gray-300 shadow-inner bg-[#232323] rounded-md text-center">03</h1>
+                    <p class="tracking-tighter text-sm md:text-lg text-start font-semibold text-[#6C6C70]">The key is stored on the chip, and <span class="text-gray-100">no other copies</span> exist across space and time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="bg-[#020204] pt-16 pb-6">
+
+    <div class="pt-16">
+        <div class="flex flex-col md:flex-row border-t border-gray-400">
+            <div class="border-t border-b bg-[url('img/sectionImage.jpeg')] bg-cover opacity-70 bg-center bg-no-repeat w-full px-8 md:w-1/2">
+                <div class="z-20 text-center pt-30 pb-20 px-8">
+                    <h1 class="md:text-6xl text-4xl text-white font-semibold">Zero out of 2,000,000</h1>
+                    <p class="lg:text-2xl font-semibold bg-gradient-to-r from-white text-transparent to-gray-300 bg-clip-text">cards hacked since creation</p>
+                </div>
+            </div>
+            <div class="border-t md:w-1/2 md:border-t-0 border-l border-gray-400">
+                <div class="px-8 pt-20 pb-20">
+                    <h1 class="lg:px-20 font-semibold tracking-tighter lg:tracking-normal lg:leading-6 leading-4 text-lg text-[#6C6C70] lg:text-center lg:text-2xl">Tangem keeps your crypto safe on several fronts</h1>
+                    <div class="flex gap-10 md:justify-between lg:px-28 items-center mt-8">
+                        <div class="lg:border-r-2 lg:w-1/2">
+                            <img src="img/protect.png" alt="" class="w-10 lg:w-16">
+                            <p class="text-white  font-semibold lg:text-lg text-sm">Biometric <br><span class="text-[#6C6C70]">Security</span></p>
+                        </div>
+                        <div class="h-24 hidden md:flex w-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent mt-10"></div>
+                        <div class="ml-16">
+                            <img src="img/secure.png" alt="" class="w-16 lg:w-20 ">
+                            <p class="text-white font-semibold lg:text-lg text-sm lg:hidden">Access code <br><span class="text-[#6C6C70]">protection</span></p>
+                            <p class="text-white font-semibold lg:text-lg text-sm hidden lg:block">Access code <span class="text-[#6C6C70]">protection</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   </section>
+
+   <section class="pt-16 pb-6 bg-[#010101]">
+        <div class="pt-16 px-8 flex flex-col gap-10 items-center lg:flex-row lg:px-10 xl:px-20 ">
+            <div class="w-full lg:w-1/2">
+                <h1 class="mb-10 bg-gradient-to-r from-gray-500 text-transparent to-gray-100 font-bold text-center bg-clip-text text-4xl">Access to thousands of cryptocurrencies.</h1>
+                <div>
+                    <img src="img/tablet.png" alt="" >
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%"><iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/d0ioue?autoplay=1&muted=1&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+            </div>
+        </div>
+   </section>
+
+   <section class="pt-16 lg:pt-28 pb-6 bg-[#010101] px-8">
+    <div class="lg:px-20 xl:px-20 ">
+        <div class="pt-10">
+            <h1 class="mb-6 pt-10 text-4xl text-start font-semibold bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text">Discover the best crypto wallet app in Tangem.</h1>
+            <div class="flex flex-col items-center gap-6 lg:flex-row pt-15">
+                <div class="mt-10 lg:w-1/2">
+                     <img src="img/TangemMobile.png" alt=""> 
+                </div>
+                
+                <div class="mt-8 lg:w-1/2 grid md:grid-cols-2 gap-4">
+                    <div class="border-b-1 border-white">
+                        <h3 onclick="redirect()" class="cursor-pointer bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 text-2xl text-start capitalize font-serif">Manage</h3>
+                        <p class="bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 pb-6 text-start">
+                            Get access to live tickers for thousands of digital
+                             assets, compare prices and make more informed
+                             investment decisions.
+                        </p>
+                    </div>
+
+                    <div class="border-b-1 border-white">
+                        <h3 onclick="redirect()" class="cursor-pointer bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 text-2xl text-start capitalize font-serif">Analyze tokens</h3>
+                        <p class="bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 pb-6 text-start">
+                            Get insights into valuable data that drive smarter decisions, analyze market trends, and uncover key opportunities.
+                        </p>
+                    </div>
+
+                    <div class="border-b-1 border-white">
+                        <h3 onclick="redirect()" class="cursor-pointer bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 text-2xl text-start capitalize font-serif" >Swap</h3>
+                        <p class="bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 pb-6 text-start">
+                            Exchange one cryptocurrency for another quickly and securely with our providers. Diversify your portfolio, grow your funds and protect your assets. *
+                        </p>
+                    </div>
+
+                    <div class="border-b-1 border-white">
+                        <h3 onclick="redirect()" class="cursor-pointer bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 text-2xl text-start capitalize font-serif">Buy</h3>
+                        <p class="bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 pb-6 text-start">
+                            Easily purchase Bitcoin and other cryptocurrencies using credit cards, bank transfers, Apple Pay, or Google Pay
+                        </p>
+                    </div>
+
+                    <div class="border-b-1 border-white">
+                        <h3 onclick="redirect()" class="bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 text-2xl text-start capitalize font-serif">Sell</h3>
+                        <p class="bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 pb-6 text-start">
+                            Sell crypto assets, including stablecoins, safely via integrated off-ramp services.
+                        </p>
+                    </div>
+
+                    <div class="border-b-1 border-white">
+                        <h3 onclick="redirect()" class="cursor-pointer bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 text-2xl text-start capitalize font-serif">Stake crypto</h3>
+                        <p class="bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text mt-6 pb-6 text-start">
+                            Earn passive income and benefit from long-term reward accumulation by staking cryptocurrencies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="pt-16 lg:pt-28 pb-6 bg-[#010101] px-8 text-white">
+    <div class="lg:px-20 lg:pt-16">
+        <div class="flex flex-col gap-10 lg:flex-row">
+            <div class="lg:w-1/2 flex flex-col gap-8">
+                <div class="lg:max-w-sm">
+                    <h1 class="lg:text-7xl font-bold mb-6 pt-10 text-4xl text-start bg-gradient-to-r from-gray-500 text-transparent to-gray-100 bg-clip-text">Get answers to your questions.</h1>
+                    <p class="text-[#6C6C70] font-semibold text-lg lg:mt-10">In anticipation of your questions, we've answered the most common ones. 
+                     <span class="text-gray-100"> 
+                        Help Center and online support available 24 hours a day, 7 days a week.
+                        Join our community Discord Join our community
+                    </span>
+                    </p>
+                </div>
+
+                <div class="flex items-center lg:mt-10">
+                    <div class="w-1/2">
+                        <img src="img/Discord Logo.png" alt="" class="h-12 w-12">
+                        <div>
+                            <p class="font-bold tracking-tight text-[#6C6C70]">Join our community</p>
+                            <p class="text-lg font-bold">Discord</p>
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <img src="img/Telegram Logo.png" alt="" class="h-12 w-12">
+                        <div>
+                            <h3 class="font-semibold tracking-tight text-[#6C6C70]">Join our community</h3>
+                            <p class="text-lg font-bold">Telegram</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="lg:w-1/2 flex flex-col gap-10">
+                 <div class="border-gray-600 relative md:w-[400px] lg:w-full overflow-hidden border-b pb-4">
+                    <input type="checkbox" class=" cursor-pointer peer absolute top-0 inset-x-0 w-full h-12 opacity-0  peercursor-pointer">
+                    <div class="bg-[#010101] h-12 w-full flex items-center">
+                        <h1 class="font-bold text-xl text-[#6C6C70] tracking-tighter font-sans text-start">Why do I need a hardware wallet?</h1>
+                    </div>
+
+                    <div class="absolute cursor-pointer top-3 right-0 text-gray-100 transition-transform duration-500 rotate-0 peer-checked:rotate-90">
+                        <i class="ri-arrow-right-wide-fill cursor-pointer text-2xl font-bold text-gray-600"></i>
+                    </div>
+
+                    <div class="transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-56 pt-6">
+                        <div class="pb-10">
+                            <p>The main benefit of a hardware crypto wallet is enhanced security, as private keys are stored offline, 
+                                reducing the risk of hacking and malware. 
+                                Another advantage is complete independence; you own your keys and can access your crypto anytime.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="border-gray-600 relative md:w-[400px] lg:w-full overflow-hidden border-b pb-6">
+                    <input type="checkbox" class=" cursor-pointer peer absolute top-0 inset-x-0 w-full h-12 opacity-0  peercursor-pointer">
+                    <div class="bg-[#010101] h-12 w-full flex items-center">
+                        <h1 class="text-xl text-[#6C6C70] tracking-tighter font-sans text-start pt-6 font-bold">What makes Tangem<br class="lg:hidden"> different from <br class="">other cold wallets?</h1>
+                    </div>
+
+                    <div class="absolute cursor-pointer top-3 right-0 text-gray-100 transition-transform duration-500 rotate-0 peer-checked:rotate-90">
+                        <i class="ri-arrow-right-wide-fill cursor-pointer text-2xl font-bold text-gray-600"></i>
+                    </div>
+
+                    <div class="transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-56 pt-6">
+                        <div class="pb-10">
+                            <p class="mt-6">
+                                Your hardware wallet is always with you and doesn't need charging or wires. 
+                                It fits easily in your pocket, so you can sign your transactions anywhere. 
+                                Tangem's EAL6+ certification means it's as secure as a biometric passport.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative border-gray-600 md:w-[400px] lg:w-full overflow-hidden border-b pb-4">
+                    <input type="checkbox" class=" cursor-pointer peer absolute top-0 inset-x-0 w-full h-12 opacity-0  peercursor-pointer">
+                    <div class="bg-[#010101] h-12 w-full flex items-center">
+                        <h1 class="font-bold text-xl text-[#6C6C70] tracking-tighter font-sans text-start mt-6">What’s the difference <br class="lg:hidden">between a 2-card <br class="md:hidden">and a 3-card set?</h1>
+                    </div>
+
+                    <div class="absolute cursor-pointer top-3 right-0 text-gray-100 transition-transform duration-500 rotate-0 peer-checked:rotate-90">
+                        <i class="ri-arrow-right-wide-fill cursor-pointer text-2xl font-bold text-gray-600"></i>
+                    </div>
+
+                    <div class="transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-56 pt-6">
+                        <div class="pb-10">
+                            <p class="mt-6">
+                                A 3-card set improves recovery options. 
+                                If one card is lost, the other two can ensure access. However, with only two cards, 
+                                losing one and forgetting your access code would leave you unable to reset or recover your wallet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="relative border-gray-600 md:w-[400px] lg:w-full overflow-hidden border-b pb-4">
+                    <input type="checkbox" class=" cursor-pointer peer absolute top-0 inset-x-0 w-full h-12 opacity-0  peercursor-pointer">
+                    <div class="bg-[#010101] h-12 w-full flex items-center">
+                        <h1 class="font-bold text-xl text-[#6C6C70] tracking-tighter font-sans text-start mt-4">Does my hardware wallet depend<br class="lg:hidden"> on Tangem's servers?</h1>
+                    </div>
+
+                    <div class="absolute cursor-pointer top-3 right-0 text-gray-100 transition-transform duration-500 rotate-0 peer-checked:rotate-90">
+                        <i class="ri-arrow-right-wide-fill cursor-pointer text-2xl font-bold text-gray-600"></i>
+                    </div>
+
+                    <div class="transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-56 pt-6">
+                        <div class="pb-10">
+                            <p class="mt-6">
+                                We designed your hardware wallet to be fully autonomous—no 
+                                Tangem servers are involved in your crypto transactions. 
+                                You need only your card/ring, smartphone, and the blockchain.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative border-gray-600 md:w-[400px] lg:w-full overflow-hidden border-b pb-6">
+                    <input type="checkbox" class=" cursor-pointer peer absolute top-0 inset-x-0 w-full h-12 opacity-0  peercursor-pointer">
+                    <div class="bg-[#010101] h-12 w-full flex items-center">
+                        <h1 class="font-bold text-xl pt-6 text-[#6C6C70] tracking-tighter font-sans text-start">If stolen, can a third party<br class="lg:hidden"> access my hardware wallet?</h1>
+                    </div>
+
+                    <div class="absolute cursor-pointer top-3 right-0 text-gray-100 transition-transform duration-500 rotate-0 peer-checked:rotate-90">
+                        <i class="ri-arrow-right-wide-fill cursor-pointer text-2xl font-bold text-gray-600"></i>
+                    </div>
+
+                    <div class="transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-56 pt-6">
+                        <div class="pb-10">
+                            <p>
+                                No. An access code protects the wallet against unauthorized access by third parties and brute-force attacks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative border-gray-600 md:w-[400px] lg:w-full overflow-hidden border-b pb-4">
+                    <input type="checkbox" class=" cursor-pointer peer absolute top-0 inset-x-0 w-full h-12 opacity-0  peercursor-pointer">
+                    <div class="bg-[#010101] h-12 w-full flex items-center">
+                        <h1 class="font-bold text-xl text-[#6C6C70] tracking-tighter font-sans text-start">Can I use a seed phrase <br class="lg:hidden"> in the wallet?</h1>
+                    </div>
+
+                    <div class="absolute cursor-pointer top-3 right-0 text-gray-100 transition-transform duration-500 rotate-0 peer-checked:rotate-90">
+                        <i class="ri-arrow-right-wide-fill cursor-pointer text-2xl font-bold text-gray-600"></i>
+                    </div>
+
+                    <div class="transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-72 pt-6">
+                        <div class="pb-10">
+                            <p>
+                                Using a seed phrase is optional. There are three key generation <br>
+                                1. Use the certified hardware True Random Number Generator (TRNG) that 
+                                generates and stores keys inside the chip. No copies exist outside your Tangem device (recommended).<br>
+                                2. Generate a seed phrase with the Tangem app and import it to the hardware device.<br>
+                                3. Import your seed phrase from another crypto wallet.<br>
+                                Note that seed phrases can be copied and stolen, unlike private keys generated offline.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative md:w-[400px] lg:w-full border-gray-600 overflow-hidden border-b pb-4">
+                    <input type="checkbox" class=" cursor-pointer peer absolute top-0 inset-x-0 w-full h-12 opacity-0  peercursor-pointer">
+                    <div class="bg-[#010101] h-12 w-full flex items-center">
+                        <h1 class="font-bold text-xl lg:text-lg text-[#6C6C70] tracking-tighter font-sans text-start">Will I lose access to my funds <br class="lg:hidden"> if i lose my phone?</h1>
+                    </div>
+
+                    <div class="absolute cursor-pointer top-3 right-0 text-gray-100 transition-transform duration-500 rotate-0 peer-checked:rotate-90">
+                        <i class="ri-arrow-right-wide-fill cursor-pointer text-2xl font-bold text-gray-600"></i>
+                    </div>
+
+                    <div class="transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-72 pt-6">
+                        <div class="pb-10">
+                            <p>
+                                You won't lose access to your funds. Use your card or 
+                                ring on any compatible smartphone to download the Tangem app and access your portfolio. 
+                                Remember, your phone doesn't store sensitive information; it’s just a display for easy access.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="pt-16 lg:pt-28 pb-6 bg-[#010101] px-8">
+    <div class="lg:px-20 lg:pt-16">
+        <div class="flex flex-col lg:flex-row gap-10">
+            <div class="lg:w-1/2">
+                <img src="img/Tangemmmm.png" alt="" class="lg:w-full">
+            </div>
+            <div class="lg:w-1/2">
+                <h1 class="text-white  text-2xl text-start lg:text-4xl mb-8">Tangem Wallet</h1>
+                <div class="bg-[#151515] p-2 flex  flex-col gap-8">
+                <!-- Item 1 - 3 Cards Set -->
+                <div tabindex="0" class=" cursor-pointer border-b-1 border-gray-400 p-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent group">
+                    <div class="flex items-center justify-between">
+                    <h1 class="cursor-pointer text-lg font-semibold text-[#6C6C70] group-focus:text-white transition-colors">3 Cards Set</h1>
+                    <p id="Three-card-set" class="cursor-pointer text-lg font-semibold text-[#6C6C70] group-focus:text-white transition-colors">$69.90</p>
+                    </div>
+                    <p class="cursor-pointer text-gray-400 group-focus:text-white transition-colors">Safer</p>
+                </div>
+
+                <!-- Item 2 - 2 Cards Set -->
+                <div tabindex="0"class="cursor-pointer border-b-1  border-gray-400 p-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent group">
+                    <div class="flex items-center justify-between">
+                    <h1 class="text-lg font-semibold text-[#6C6C70] group-focus:text-white transition-colors">2 Cards Set</h1>
+                    <p id="two-card-set" class="text-lg font-semibold text-[#6C6C70] group-focus:text-white transition-colors">$54.90</p>
+                    </div>
+                    <p class="text-gray-400 group-focus:text-white transition-colors">Cheaper</p>
+                </div>
+
+                <!-- Item 3 - Family Pack -->
+                <div tabindex="0" class="cursor-pointer border-b-1 border-gray-400 p-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent group">
+                    <div class="flex items-center justify-between">
+                    <h1 class="cursor-pointer text-lg font-semibold text-[#6C6C70] group-focus:text-white transition-colors">Family Pack</h1>
+                    <p id="family-pack" class="cursor-pointer text-lg font-semibold text-[#6C6C70] group-focus:text-white transition-colors">$139.80</p>
+                    </div>
+                    <p class="text-gray-400 group-focus:text-white transition-colors">Best Value for 2 cold wallets</p>
+                </div>
+
+                <!-- Item 4 - Tangem Ring -->
+                <div tabindex="0" 
+                    class="cursor-pointer border-b-1 border-gray-400 p-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent group">
+                    <div class="flex items-center justify-between">
+                    <h1 class="cursor-pointer text-lg font-semibold text-[#6C6C70] group-focus:text-white transition-colors">Tangem Ring</h1>
+                    <p id="tangem-ring" class="cursor-pointer text-lg font-semibold text-[#6C6C70] group-focus:text-white transition-colors">$160.00</p>
+                    </div>
+                    <p class="cursor-pointer text-gray-400 group-focus:text-white transition-colors">Ring and two cards</p>
+                </div>
+                </div>
+                <div class="mt-4 ">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-white font-semibold">Promo Code</h3>
+                        <a href="" class="text-gray-400 text-sm underline">I have a promo Code</a>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 pt-6 pb-6">
+                        <p class="text-gray-400">Est. Delivery</p>
+                        <h3 class="text-white font-bold">8-7 Business Days</h3>
+                    </div>
+
+                    <div>
+                        <button onclick="redirect()" id="checkout-button" class="cursor-pointer w-full py-2 bg-blue-500 rounded-md font-bold text-white">Order <span id="selected-price"></span></button>
+                        <p class="text-gray-400 text-xs text-center mt-2 mb-2">Or express checkbox</p>
+                        <button onclick="redirect()" class="cursor-pointer bg-yellow-500 text-blue-800 font-bold text-lg w-full py-2 rounded-md">Pay<span class="text-blue-500">Pal</span></button>
+                    </div>
+                    <p class="text-[#6C6C70] text-center text-sm mt-2 font-semibold">Taxes and duties are not included</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <footer class="pt-16 lg:pt-28 pb-6 bg-[#111111] px-8">
+    <div class="flex flex-col lg:flex-row lg:justify-between lg:px-8">
+        <div>
+            <div class="">
+                <img src="img/TangemMainLogo-.png" alt="" class="w-40 opacity-40">
+                <p class="text-[#474747] mb-4">Global Headquarters, Tangem AG Baarerstrasse 10, 6300 Zug, Switzerland</p>
+                <a href="support@tangem.com" class="text-[#474747] mt-10">support@tangem.com</a>
+            </div>
+
+            <div class="text-[#474747] flex space-x-4 mt-6">
+                
+                <div>
+                    <a href="https://x.com/tangem">
+                    <i class="cursor-pointer text-3xl ri-discord-line hover:text-gray-400 ease-in-out duration-300"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://discord.com/invite/sFGdnMtsnG">
+                    <i class="text-3xl ri-reddit-line hover:text-gray-400 ease-in-out duration-300 cursor-pointer"></i>
+                    </a>
+                </div>
+                
+                <div>
+                    <a href="https://www.instagram.com/tangemwallet">
+                    <i class="text-3xl ri-instagram-line hover:text-gray-400 ease-in-out duration-300 cursor-pointer"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://www.facebook.com/tangemwallet">
+                    <i class="text-3xl ri-facebook-circle-fill hover:text-gray-400 ease-in-out duration-300 cursor-pointer"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://www.linkedin.com/company/tangem">
+                    <i class="text-3xl ri-linkedin-fill hover:text-gray-400 ease-in-out duration-300 cursor-pointer"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://www.youtube.com/@tangem_official">
+                    <i class="text-3xl ri-youtube-fill hover:text-gray-400 ease-in-out duration-300 cursor-pointer"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="flex gap-2 pt-8">
+
+            <div class="flex flex-col text-[#474747] gap-2">
+                <h3 class="mb-6 text-gray-400 font-bold opacity-70">Company</h3>
+                <a href="https://tangem.com/en/company/">About Tangem</a>
+                <a href="https://tangem.com/en/help_center/delivery-and-order-tracking/#a11723421739677">International <br> Delivery</a>
+                <a href="https://tangem.com/en/partnership/">Resellers</a>
+                <a href="https://tangem.com/en/affiliates/">Affiliates</a>
+                <a href="https://tangem.com/en/co-branding/">Customize your wallet</a>
+                <a href="https://tangem.com/en/blog/">Blog</a>
+                <a href="https://community.tangem.com/roadmap">Roadmap</a>
+                <a href="https://drive.google.com/drive/folders/1B65x9ZCfyVrT0uW1O8C2vGIMUMY6wXUA">Media Kit</a>
+                <a href="https://guide.tangem.com/">Tangem Guide</a>
+                <a href="https://careers.tangem.com/">Careers</a>
+                <a href="https://tangem.com/en/contacts/">Contacts</a>
+            </div>
+
+            
+            <div class="flex flex-col text-[#474747] gap-2">
+                <h3 class="mb-6 text-gray-400 font-bold opacity-70">Legal</h3>
+                <a href="">Terms of Use</a>
+                <a href="" class="text-nowrap">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+            
+    <div class="pt-10 flex flex-col justify-center mx-auto items-center text-xs max-w-lg">
+        <p class="text-center text-[#474747] pt-10">Reg. No CHE-390.112.525</p>
+        <p class="text-center text-[#474747] mt-4">Tangem AG provides only hardware wallets and non-custodial software solutions for managing digital assets.
+        Tangem is not regulated as a financial services provider or cryptocurrency exchange. Tangem does not hold, custody, or control users' assets or transactions.
+        Crypto transaction services are provided by third-party providers. Tangem provides no advice or recommendation on use of these third-party services.
+        </p>
+
+        <p class="text-[#474747] text-center mt-6">Copyright © 2025 Tangem AG. All Rights Reserved</p>
+    </div>
+   </footer>
+
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            speed: 400,
+            spaceBetween: 40,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            grabCursor: true,
+            breakpoints: {
+            // when window width is >= 640px
+            640: {
+            slidesPerView: 1,
+            },
+            // when window width is >= 768px
+            768: {
+            slidesPerView: 2,
+            },
+            // when window width is >= 1024px
+            1024: {
+            slidesPerView: 3,
+            },
+        }
+    });
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            { pageLanguage: 'en' },
+            'google_translate_element' // Now matches the div ID
+        );
+    }
+
+    </script>
+</body>
+</html>
